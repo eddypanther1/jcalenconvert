@@ -39,6 +39,12 @@ function japaneseToGregorian(eraName, eraYear) {
 
 // Event handling for user input
 document.addEventListener("DOMContentLoaded", function () {
+  // Ensure no JavaScript overrides the default selection
+  const eraSelect = document.getElementById("eraName");
+  if (!eraSelect.value) {
+    eraSelect.value = "昭和"; // Set default to 昭和 if not already set
+  }
+
   document.getElementById("convert").addEventListener("click", function () {
     try {
       const inputYear = normalizeYearInput(document.getElementById("gregorian").value);

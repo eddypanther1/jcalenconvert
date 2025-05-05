@@ -49,9 +49,9 @@ label {
 input, select {
     padding: 8px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 10px;
     font-size: 14px;
-    width: 160px;
+    width: 200px;
 }
 
 .output-box {
@@ -112,3 +112,25 @@ textarea.output-box {
     width: 40px;
     height: 40px;
 }
+
+.styled-select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 60px; /* Adjusted to fit the 2-character width */
+    background-color: #fff;
+    color: #333;
+    appearance: none; /* Removes default browser styling */
+    -webkit-appearance: none; /* For Safari */
+    -moz-appearance: none; /* For Firefox */
+    text-align: center; /* Centers the text */
+    cursor: pointer;
+}
+
+.styled-select:focus {
+    outline: none;
+    border-color: #007BFF; /* Highlight border on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+
+}}
