@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Year Converter</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="converter.js" defer></script>
+</head>
+<body>
+    <h1>西暦と和暦の変換</h1>
+    <div>
+        <label>西暦: <input type="number" id="gregorian" placeholder="Enter Gregorian year"></label>
+        <button id="convert">和暦に変換</button>
+        <p id="japanese"></p>
+    </div>
+    <div>
+        <label>和暦: <input type="text" id="eraName" placeholder="Era name (例: 令和)">
+        <input type="number" id="eraYear" placeholder="Era year"></label>
+        <button id="convertBack">西暦に変換</button>
+        <p id="gregorianBack"></p>
+    </div>
+</body>
+</html>
