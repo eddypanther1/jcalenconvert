@@ -83,6 +83,7 @@ button:hover {
 .error-message {
     color: red;
     font-size: 14px;
+    text-align: left;
     margin-top: 10px;
 }
 
@@ -96,4 +97,18 @@ textarea.output-box {
     font-size: 14px;
     background-color: #f9f9f9;
     color: #555;
+}
+
+.layout-table {
+    width: 100%;
+    border-spacing: 10px;
+}
+
+.layout-table td {
+    vertical-align: middle;
+}
+
+.layout-table img {
+    width: 40px;
+    height: 40px;
 }
