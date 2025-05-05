@@ -26,16 +26,33 @@ function japaneseToGregorian(eraName, eraYear) {
   return "Invalid era";
 }
 
+// Normalize year input (convert double-byte to single-byte and validate format)
+function normalizeYearInput(year) {
+  const normalizedYear = year.replace(/[０-９]/g, ch => String.fromCharCode(ch.charCodeAt(0) - 0xFEE0));
+  if (!/^\d{4}$/.test(normalizedYear)) {
+    throw new Error("Year must be in the format YYYY.");
+  }
+  return parseInt(normalizedYear, 10);
+}
+
 // Event handling for user input
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("convert").addEventListener("click", function () {
-      const inputYear = parseInt(document.getElementById("gregorian").value);
+    try {
+      const inputYear = normalizeYearInput(document.getElementById("gregorian").value);
       document.getElementById("japanese").innerText = gregorianToJapanese(inputYear);
+    } catch (error) {
+      document.getElementById("japanese").innerText = error.message;
+    }
   });
 
   document.getElementById("convertBack").addEventListener("click", function () {
+    try {
       const eraName = document.getElementById("eraName").value;
-      const eraYear = document.getElementById("eraYear").value;
+      const eraYear = normalizeYearInput(document.getElementById("eraYear").value);
       document.getElementById("gregorianBack").innerText = japaneseToGregorian(eraName, eraYear);
+    } catch (error) {
+      document.getElementById("gregorianBack").innerText = error.message;
+    }
   });
 });
