@@ -12,7 +12,7 @@ function normalizeYearInput(year, format = "yyyy") {
   const normalizedYear = year.replace(/[０-９]/g, ch => String.fromCharCode(ch.charCodeAt(0) - 0xFEE0));
   const regex = format === "yyyy" ? /^\d{4}$/ : /^\d{2}$/;
   if (!regex.test(normalizedYear)) {
-    throw new Error(`Year must be in the format ${format.toUpperCase()}.`);
+    throw new Error(format === "yyyy" ? "Year must be in the format YYYY." : "Year must be in the format YY.");
   }
   return parseInt(normalizedYear, 10);
 }
@@ -44,8 +44,9 @@ document.addEventListener("DOMContentLoaded", function () {
       const inputYear = normalizeYearInput(document.getElementById("gregorian").value);
       const result = gregorianToJapanese(inputYear);
       document.getElementById("japaneseOutput").value = result;
+      document.getElementById("errorMessage").innerText = ""; // Clear error message
     } catch (error) {
-      document.getElementById("japaneseOutput").value = error.message;
+      document.getElementById("errorMessage").innerText = error.message;
     }
   });
 
@@ -55,8 +56,9 @@ document.addEventListener("DOMContentLoaded", function () {
       const eraYear = normalizeYearInput(document.getElementById("eraYear").value, "yy");
       const result = japaneseToGregorian(eraName, eraYear);
       document.getElementById("gregorianOutput").value = result;
+      document.getElementById("errorMessage").innerText = ""; // Clear error message
     } catch (error) {
-      document.getElementById("gregorianOutput").value = error.message;
+      document.getElementById("errorMessage").innerText = error.message;
     }
   });
 });
