@@ -11,18 +11,17 @@
     <h1>西暦と和暦の変換</h1>
     <div class="container">
         <div class="row">
-            <img src=https://icons8.com/icon/HCdI4eq4Kre8/2025" alt="Gregorian Calendar Icon">
+            <img src="https://www.iconpacks.net/icons/free-icons-6/free-2025-year-calendar-black-icon-23279.png" alt="Gregorian Calendar Icon">
             <div class="input-group">
                 <label for="gregorian">西暦:</label>
                 <input type="text" id="gregorian" placeholder="Enter Gregorian year">
             </div>
             <button id="convert">和暦に変換</button>
+            <input type="text" id="japaneseOutput" class="output-box" readonly placeholder="Converted Japanese year (Kanji and Romaji)">
         </div>
-        <p id="japanese" class="output"></p>
 
         <div class="row">
-            <img src="https://icons8.com/icon/36896/japanese-umbrella" alt="Japanese Calendar Icon">
- 
+            <img src="https://www.iconpacks.net/icons/3/free-torii-gate-icon-9030.png" alt="Japanese Calendar Icon">
             <div class="input-group">
                 <label for="eraName">和暦:</label>
                 <select id="eraName">
@@ -32,11 +31,11 @@
                     <option value="大正">大正</option>
                     <option value="明治">明治</option>
                 </select>
-                <input type="text" id="eraYear" placeholder="Era year">
+                <input type="text" id="eraYear" placeholder="Era year (YY)">
             </div>
             <button id="convertBack">西暦に変換</button>
+            <input type="text" id="gregorianOutput" class="output-box" readonly placeholder="Converted Gregorian year">
         </div>
-        <p id="gregorianBack" class="output"></p>
     </div>
 </body>
 </html>

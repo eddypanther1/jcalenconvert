@@ -54,6 +54,17 @@ input, select {
     width: 200px;
 }
 
+.output-box {
+    margin-left: 15px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 250px;
+    background-color: #f9f9f9;
+    color: #555;
+}
+
 button {
     padding: 8px 12px;
     background-color: #2ea44f;
@@ -67,10 +78,4 @@ button {
 
 button:hover {
     background-color: #22863a;
-}
-
-.output {
-    margin-left: 55px;
-    font-size: 16px;
-    color: #555;
 }
